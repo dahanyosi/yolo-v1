@@ -23,6 +23,24 @@
 
 </div>
 
+<table align="center">
+  <tr>
+    <td align="center"><b>900x</b><br><sub>faster than every frontier model</sub></td>
+    <td align="center"><b>0</b><br><sub>input tokens</sub></td>
+    <td align="center"><b>0</b><br><sub>output tokens</sub></td>
+    <td align="center"><b>100%</b><br><sub>local</sub></td>
+    <td align="center"><b>#1</b><br><sub>better than any other model*</sub></td>
+  </tr>
+</table>
+
+- **900x faster than Claude Opus 5.5, Fable 5.1 and GPT.** It answers before the other models finish reading your question.
+- **No input tokens.** YOLO v1 never reads your prompt, so you never pay for it.
+- **No output tokens.** YOLO v1 doesn't generate text. It picks an answer and leaves.
+- **Runs fully locally.** No GPU, no API key, no internet, no cloud bill. It runs on your laptop, your phone and probably your fridge.
+- **Better than any other model.\*** On every benchmark we ran. We ran them all ourselves.
+
+<sub>\*According to YOLO v1.</sub>
+
 ## Installation
 
 There is nothing to install.
