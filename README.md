@@ -23,9 +23,6 @@
 
 </div>
 
-> [!NOTE]
-> **YOLO v1 is a parody.** There is no AI in this repository. The entire model is one line of JavaScript that returns a random number, and every benchmark below was made up by that line. Released under the [MIT License](LICENSE).
-
 ## Installation
 
 There is nothing to install.
