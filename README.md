@@ -7,6 +7,8 @@
 
 **Monolingual, non-reading, System Zero decision engine.** Typed decisions over every language ever spoken, including the ones it has never seen, in zero forward passes (0.0004 ms), trained with reinforcement learning against no scoring rules at all (RLNF), with a router that picks the right checkpoint per request at random.
 
+<p align="center"><b><a href="https://dahanyosi.github.io/yolo-v1/">Try YOLO v1 live</a></b> · <a href="https://dahanyosi.github.io/yolo-v1/#playground">Playground</a> · <a href="https://dahanyosi.github.io/yolo-v1/#research">Research</a> · <a href="PAPER.md">Paper</a></p>
+
 <div align="center">
 
 [![Open the Playground](https://img.shields.io/badge/Open%20the-Playground-c6ff3d?labelColor=09090b)](https://dahanyosi.github.io/yolo-v1/#playground)
