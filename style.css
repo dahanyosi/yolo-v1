@@ -130,6 +130,48 @@ pre { margin: 0; padding: 14px; background: var(--bg); border: 1px solid var(--b
 .history li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .history .empty { color: var(--faint); }
 
+/* Research */
+.eyebrow { font-size: 12px; color: var(--faint); margin-bottom: 16px; overflow-wrap: anywhere; }
+.eyebrow.b64 { margin: 32px 0 0; }
+#research h3 { margin: 0 0 10px; font-size: 18px; letter-spacing: -0.01em; }
+.muted-p { color: var(--muted); font-size: 15px; margin: 0 0 12px; }
+.lineage { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 880px) { .lineage { grid-template-columns: repeat(5, 1fr); } }
+.lineage li { background: var(--surface); padding: 18px; display: grid; gap: 4px; align-content: start; }
+.lineage span { font-size: 13px; color: var(--faint); }
+.lineage b { font-size: 15px; }
+.lineage small { font-size: 13px; color: var(--faint); }
+.lineage li.us { background: #151a0a; }
+.lineage li.us span, .lineage li.us b { color: var(--accent); }
+.lineage li.us small { color: var(--muted); }
+.research-grid { margin-bottom: 16px; }
+table.primitives { font-size: 14px; margin-top: 8px; }
+table.primitives th, table.primitives td { padding: 10px 8px; }
+table.primitives th:first-child, table.primitives td:first-child { padding-left: 0; }
+table.primitives td:first-child { font-weight: 600; color: var(--text); }
+table.primitives td:nth-child(2) { color: var(--muted); }
+.chart-card { margin-bottom: 16px; }
+.ipd { width: 100%; max-width: 640px; height: auto; display: block; margin: 8px auto 0; }
+.ipd .axis { stroke: #3f3f46; stroke-width: 2; }
+.ipd .axis-label { fill: var(--faint); font: 500 22px Inter, sans-serif; }
+.ipd .dot { fill: #52525b; }
+.ipd .dot-label { fill: var(--muted); font: 500 22px Inter, sans-serif; }
+.ipd .yolo-line { stroke: var(--accent); stroke-width: 4; stroke-dasharray: 10 8; }
+.ipd .yolo-head, .ipd .yolo-dot { fill: var(--accent); }
+.ipd .yolo-label { fill: var(--accent); font: 800 34px Inter, sans-serif; }
+.ipd .yolo-sub { fill: var(--muted); font: 500 22px Inter, sans-serif; }
+.papers { display: grid; gap: 16px; margin-bottom: 48px; }
+@media (min-width: 880px) { .papers { grid-template-columns: repeat(3, 1fr); } }
+.paper { display: grid; gap: 8px; align-content: start; text-decoration: none; }
+a.paper:hover { border-color: #3f3f46; }
+.paper .tag { font: 600 11px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+.paper b { font-size: 18px; }
+.paper small { color: var(--muted); font-size: 14px; }
+#research .faq-title { font-size: clamp(1.4rem, 4vw, 1.75rem); margin-bottom: 16px; }
+.faq { display: grid; gap: 8px; }
+.faq details { margin: 0; }
+.faq details p { margin: 0; padding: 14px 20px 18px; background: var(--surface); border: 1px solid var(--border); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); font-size: 15px; }
+
 /* Benchmarks */
 .chart { display: grid; gap: 18px; }
 .bar-row { display: grid; gap: 6px; }

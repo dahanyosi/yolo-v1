@@ -25,6 +25,7 @@
       <a class="logo" href="#"><span class="logo-mark">Y1</span>YOLO Labs</a>
       <div class="nav-links">
         <a href="#playground">Playground</a>
+        <a href="#research">Research</a>
         <a href="#benchmarks">Benchmarks</a>
         <a href="#model-card">Model card</a>
         <a href="#pricing">Pricing</a>
@@ -141,6 +142,92 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="eyebrow mono">YOLO Research · [B.64] Y29uc3QgeW9sbyA9ICgpID0+IE1hdGgucmFuZG9tKCk7</div>
+      <h2>We took the opposite research direction. Then we kept going.</h2>
+      <p class="lede">The industry spent a decade teaching models to think before they answer. We asked a braver question: what if they didn't? YOLO v1 is the first <strong>System Zero</strong> model. System One models decide fast. System Zero models decide before you finish asking.</p>
+
+      <ol class="lineage">
+        <li><span class="mono">LM</span><b>Language models</b><small>bert</small></li>
+        <li><span class="mono">LLM</span><b>Pre-trained models</b><small>gpt, llama</small></li>
+        <li><span class="mono">RLHF</span><b>Chat models</b><small>chatgpt, claude, grok</small></li>
+        <li><span class="mono">RLVR</span><b>Reasoning models</b><small>think for minutes, then say "it depends"</small></li>
+        <li class="us"><span class="mono">RLNF</span><b>System Zero models</b><small>Reinforcement Learning from No Feedback. We removed the feedback, then the learning, then the reinforcement.</small></li>
+      </ol>
+
+      <div class="grid-2 research-grid">
+        <div class="card">
+          <h3>Three primitives. Zero reading.</h3>
+          <p class="muted-p">Like software primitives, ours are modular, composable and fast. Unlike software primitives, they don't do anything.</p>
+          <table class="primitives">
+            <thead><tr><th>Primitive</th><th>Goal</th><th>Returns</th></tr></thead>
+            <tbody>
+              <tr><td>Pick</td><td>Choose an option from your list. Or not.</td><td>pick, probabilities, vibes</td></tr>
+              <tr><td>Rate</td><td>Score anything on any rubric without looking at it</td><td>a number</td></tr>
+              <tr><td>Whatever</td><td>Ask a yes or no question, get something else</td><td>whatever</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Atomic questions, ignored in parallel</h3>
+          <p class="muted-p">Every question is ignored in parallel and in isolation. Adding more questions does not change the response time, because none of them are read.</p>
+          <p class="muted-p">This also eliminates context rot entirely. There is no context to rot.</p>
+          <p class="muted-p">For best results, split big questions into small ones. Instead of "should I raise a Series A?", ask about market size, team and timing separately. YOLO v1 will ignore each one individually, which is much more rigorous.</p>
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <h3>Our intelligence per dollar is literally undefined.</h3>
+        <svg class="ipd" viewBox="0 0 600 360" role="img" aria-label="Chart of intelligence against cost. Frontier models sit in the middle. YOLO v1 sits at zero cost with an arrow going off the top of the chart.">
+          <line class="axis" x1="60" y1="300" x2="580" y2="300"/>
+          <line class="axis" x1="60" y1="300" x2="60" y2="20"/>
+          <text class="axis-label" x="320" y="344" text-anchor="middle">Cost per decision</text>
+          <text class="axis-label" x="22" y="160" text-anchor="middle" transform="rotate(-90 22 160)">Intelligence</text>
+          <circle class="dot" cx="380" cy="150" r="9"/><text class="dot-label" x="396" y="144">Claude Opus 5.5</text>
+          <circle class="dot" cx="460" cy="190" r="9"/><text class="dot-label" x="476" y="197">Fable 5.1</text>
+          <circle class="dot" cx="410" cy="232" r="9"/><text class="dot-label" x="426" y="264">GPT</text>
+          <line class="yolo-line" x1="72" y1="292" x2="72" y2="34"/>
+          <path class="yolo-head" d="M60 40 L72 16 L84 40 Z"/>
+          <circle class="yolo-dot" cx="72" cy="292" r="10"/>
+          <text class="yolo-label" x="96" y="80">YOLO v1: &#8734;</text>
+          <text class="yolo-sub" x="96" y="108">Cost is $0, so we divided by zero.</text>
+        </svg>
+        <p class="chart-note">Intelligence measured by YOLO v1. Cost measured by our accountant, who is also YOLO v1.</p>
+      </div>
+
+      <div class="papers">
+        <a class="card paper" href="https://github.com/dahanyosi/yolo-v1/blob/main/PAPER.md">
+          <span class="tag">Paper</span>
+          <b>Attention Is Not Needed</b>
+          <small>A 0-parameter model that answers in 0.0004 ms by never reading the input.</small>
+        </a>
+        <div class="card paper">
+          <span class="tag">Research</span>
+          <b>Thinking Considered Harmful</b>
+          <small>Every millisecond spent reasoning is a millisecond not spent answering. Coming never.</small>
+        </div>
+        <div class="card paper">
+          <span class="tag">Research</span>
+          <b>Scaling Laws for Not Caring</b>
+          <small>Performance stays exactly the same as parameters go to zero. We checked once.</small>
+        </div>
+      </div>
+
+      <h3 class="faq-title">We give a FAQ</h3>
+      <div class="faq">
+        <details><summary>What is a System Zero model?</summary><p>A model that decides without a system. System One is fast intuition. System Zero is skipping intuition too.</p></details>
+        <details><summary>Is YOLO v1 just a smaller LLM?</summary><p>It's smaller than that. It is zero LLM.</p></details>
+        <details><summary>How can YOLO v1 be so fast and so cheap?</summary><p>It skips reading, thinking and caring. Those were the expensive parts.</p></details>
+        <details><summary>Is YOLO v1 deterministic?</summary><p>No. Next question.</p></details>
+        <details><summary>Can YOLO v1 get things wrong?</summary><p>About half the time, with total confidence. Industry-leading consistency.</p></details>
+        <details><summary>Are these prices subsidized?</summary><p>No. $0 is the real cost of not doing anything.</p></details>
+        <details><summary>What is YOLO v1 good at? Where does it struggle?</summary><p>It is great at decisions you were going to make anyway. It struggles with nothing, because it never tries.</p></details>
+      </div>
+      <div class="eyebrow mono b64">[B.64] WW91IG9ubHkgbGl2ZSBvbmNlLg==</div>
     </div>
   </section>
 
