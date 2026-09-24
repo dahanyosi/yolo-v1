@@ -35,7 +35,7 @@
   </tr>
 </table>
 
-- **900x faster than Claude Opus 5.5, Fable 5.1 and GPT.** It answers before the other models finish reading your question.
+- **900x faster than Claude Opus 5.5, Fable 5.1 and GPT Astra.** It answers before the other models finish reading your question.
 - **No input tokens.** YOLO v1 never reads your prompt, so you never pay for it.
 - **No output tokens.** YOLO v1 doesn't generate text. It picks an answer and leaves.
 - **Runs fully locally.** No GPU, no API key, no internet, no cloud bill. It runs on your laptop, your phone and probably your fridge.
@@ -143,11 +143,9 @@ All four checkpoints are the same line of code. The router picks one at random, 
 
 YOLO v1 introduces **Attention Is Not Needed**. Where other models read your prompt, think about it, and then answer, YOLO v1 skips the first two steps.
 
-```
-  your prompt  ──►  [ ignored ]
-
-  Math.random() ──►  answer
-```
+<p align="center">
+  <img src="assets/decision_flow.png" alt="How YOLO v1 decides: your prompt goes to 'Read the prompt' and 'Think step by step', both skipped. Math.random() goes straight to the answer: Push straight to main, confidence 0.73 (very sure)." width="100%" />
+</p>
 
 <details>
 <summary><b>View the full model (all 900B parameters)</b></summary>

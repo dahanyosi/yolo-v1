@@ -8,7 +8,7 @@ YOLO Labs · September 2026 · Peer reviewed by itself
 
 ## Abstract
 
-Frontier labs spend billions of dollars and gigawatts of power so their models can read a prompt before answering it. We ask a simple question: what if they didn't? We present YOLO v1, a 0-parameter model that answers any question in 0.0004 ms, which is 900x faster than Claude Opus 5.5, Fable 5.1 and GPT. YOLO v1 gets there by never reading the input, never thinking, and doing whatever it wants. You only live once.
+Frontier labs spend billions of dollars and gigawatts of power so their models can read a prompt before answering it. We ask a simple question: what if they didn't? We present YOLO v1, a 0-parameter model that answers any question in 0.0004 ms, which is 900x faster than Claude Opus 5.5, Fable 5.1 and GPT Astra. YOLO v1 gets there by never reading the input, never thinking, and doing whatever it wants. You only live once.
 
 ## 1. Introduction
 
@@ -44,7 +44,7 @@ YOLO v1 set a new record on every benchmark we ran it on. We ran it on all of th
 |---|---|---|
 | Claude Opus 5.5 | 1x | Yes |
 | Fable 5.1 | 1x | Yes |
-| GPT (latest) | 1x | Yes |
+| GPT Astra | 1x | Yes |
 | **YOLO v1** | **900x** | **No** |
 
 ## 5. Related work
