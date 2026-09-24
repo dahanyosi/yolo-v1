@@ -43,6 +43,16 @@
 
 <sub>\*According to YOLO v1.</sub>
 
+<p align="center">
+  <sub>SPONSORED BY</sub><br>
+  <a href="https://calltuv.com/?utm_source=yolo-v1&amp;utm_medium=referral&amp;utm_campaign=github-readme">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/calltuv-logo-dark.png" />
+      <img src="assets/calltuv-logo.png" alt="CallTuv" width="160" />
+    </picture>
+  </a>
+</p>
+
 ## Installation
 
 There is nothing to install.
@@ -217,12 +227,23 @@ None known. YOLO v1 has never checked.
 
 Pull requests are welcome. Each one is reviewed by YOLO v1 and merged or closed at random.
 
+## Sponsor
+
+<a href="https://calltuv.com/?utm_source=yolo-v1&amp;utm_medium=referral&amp;utm_campaign=github-readme">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/calltuv-logo-dark.png" />
+    <img src="assets/calltuv-logo.png" alt="CallTuv" width="180" />
+  </picture>
+</a>
+
+YOLO v1 is proudly sponsored by **[CallTuv](https://calltuv.com/?utm_source=yolo-v1&utm_medium=referral&utm_campaign=github-readme-sponsor)**, which, unlike YOLO v1, actually works. Call landlines and mobile numbers in 200+ countries straight from your browser, no app required, with pay-as-you-go pricing and no subscription.
+
 ## License
 
 YOLO v1 is released under the [MIT License](LICENSE). You may use, copy, modify, merge, publish, distribute, sublicense and sell copies of the model, all 33 characters of it.
 
 ## Disclaimer
 
-YOLO v1 is a **parody**. No AI was trained, used or harmed in the making of this model, and none of its benchmarks, speeds or costs are real measurements. It is not affiliated with, endorsed by or connected to Anthropic, OpenAI, or any other company or lab mentioned here. Product names belong to their owners and are used only for comparison and satire.
+YOLO v1 is a **parody**. No AI was trained, used or harmed in the making of this model, and none of its benchmarks, speeds or costs are real measurements. Apart from its sponsor CallTuv, it is not affiliated with, endorsed by or connected to Anthropic, OpenAI, or any other company or lab mentioned here. Product names belong to their owners and are used only for comparison and satire.
 
 <p align="center">Made by <a href="https://x.com/yosid">Yosi Dahan</a> · You only live once.</p>
