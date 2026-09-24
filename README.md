@@ -4,7 +4,7 @@
 
 900x faster than Claude Opus 5.5, Fable 5.1 and GPT, because it never reads your prompt.
 
-[Try the demo](https://dahanyosi.github.io/yolo-v1/) · [Read the paper](PAPER.md) · [Download the weights](weights/)
+[Open the playground](https://dahanyosi.github.io/yolo-v1/#playground) · [Read the paper](PAPER.md) · [Download the weights](weights/)
 
 ## Highlights
 
@@ -37,7 +37,9 @@ Not possible. YOLO v1 is so fast that it finished installing before the download
 
 ## Usage
 
-There is no API. There will never be an API. You can [try the demo](https://dahanyosi.github.io/yolo-v1/), where YOLO v1 will do whatever it wants.
+There is no API. There will never be an API. Use the [playground](https://dahanyosi.github.io/yolo-v1/#playground) instead: give it a prompt and a list of options, and YOLO v1 returns a typed decision with calibrated* probabilities. Sometimes it picks one of your options. Sometimes it doesn't like them and makes up its own. You only live once.
+
+\*Calibrated against nothing.
 
 ## Architecture
 

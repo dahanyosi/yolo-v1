@@ -17,156 +17,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #09090b;
-      --surface: #111114;
-      --surface-2: #18181c;
-      --border: #26262b;
-      --text: #f4f4f5;
-      --muted: #a1a1aa;
-      --faint: #71717a;
-      --accent: #c6ff3d;
-      --accent-2: #3de0ff;
-      --radius: 16px;
-      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    a { color: inherit; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 72px 0; border-top: 1px solid var(--border); }
-    h2 { font-size: clamp(1.75rem, 5vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px; }
-    .lede { color: var(--muted); margin: 0 0 32px; max-width: 620px; }
-    .mono { font-family: var(--mono); }
-    .accent { color: var(--accent); }
-
-    /* Nav */
-    nav { position: sticky; top: 0; z-index: 10; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; text-decoration: none; letter-spacing: -0.01em; }
-    .logo-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: var(--bg); display: grid; place-items: center; font-size: 12px; font-weight: 800; }
-    .nav-links { display: none; gap: 28px; font-size: 14px; color: var(--muted); }
-    .nav-links a { text-decoration: none; }
-    .nav-links a:hover { color: var(--text); }
-    @media (min-width: 720px) { .nav-links { display: flex; } }
-
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; font: 600 15px Inter, sans-serif; text-decoration: none; cursor: pointer; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); transition: transform 0.1s, background 0.2s; }
-    .btn:hover { background: #222228; }
-    .btn:active { transform: scale(0.97); }
-    .btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-    .btn-primary:hover { background: #d4ff6b; }
-    .btn-sm { height: 36px; padding: 0 16px; font-size: 14px; }
-
-    /* Hero */
-    .hero { padding: 88px 0 72px; border-top: 0; position: relative; }
-    .hero::before { content: ""; position: absolute; inset: -120px 0 auto; height: 520px; background: radial-gradient(ellipse 60% 60% at 50% 20%, rgba(198, 255, 61, 0.14), transparent 70%); pointer-events: none; }
-    .pill { display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px; font-size: 13px; color: var(--muted); background: var(--surface); }
-    .pill b { color: var(--accent); font-weight: 600; }
-    .hero h1 { font-size: clamp(2.5rem, 9vw, 5rem); line-height: 1.02; letter-spacing: -0.04em; margin: 24px 0 20px; font-weight: 800; }
-    .hero h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero p { font-size: clamp(1.05rem, 2.6vw, 1.3rem); color: var(--muted); max-width: 640px; margin: 0 0 32px; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 56px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .stat { background: var(--bg); padding: 20px; }
-    .stat strong { display: block; font-size: 1.6rem; letter-spacing: -0.02em; }
-    .stat span { color: var(--faint); font-size: 13px; }
-    @media (min-width: 720px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-
-    /* Demo */
-    .demo { display: grid; gap: 16px; }
-    @media (min-width: 880px) { .demo { grid-template-columns: 1fr 1fr; } }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; min-width: 0; }
-    textarea { width: 100%; min-height: 140px; resize: vertical; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 12px; padding: 14px; font: 15px/1.5 Inter, sans-serif; }
-    textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
-    .demo-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
-    .hint { font-size: 13px; color: var(--faint); }
-    .answer-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); }
-    .answer { font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 6px 0 16px; min-height: 1.2em; }
-    .answer.pop { animation: pop 0.25s ease-out; }
-    @keyframes pop { from { transform: scale(0.94); opacity: 0.3; } to { transform: scale(1); opacity: 1; } }
-    .meter { height: 8px; background: var(--bg); border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
-    .meter i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 0.3s; }
-    .meter-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin: 0 0 8px; }
-    pre { margin: 16px 0 0; padding: 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; font: 13px/1.6 var(--mono); color: var(--muted); overflow-x: auto; }
-    #json { white-space: pre-wrap; overflow-wrap: anywhere; }
-    pre .k { color: var(--accent-2); }
-    pre .s { color: var(--accent); }
-
-    /* Benchmarks */
-    .chart { display: grid; gap: 18px; }
-    .bar-row { display: grid; gap: 6px; }
-    .bar-head { display: flex; justify-content: space-between; font-size: 14px; }
-    .bar-head span:last-child { color: var(--muted); font-family: var(--mono); }
-    .bar { height: 28px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; }
-    .bar i { display: block; height: 100%; width: 0.4%; min-width: 3px; background: #3f3f46; }
-    .bar.yolo i { width: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); position: relative; }
-    .bar.yolo i::after { content: "bar shortened to fit your screen \2192"; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font: 600 11px var(--mono); color: var(--bg); white-space: nowrap; }
-    .chart-note { font-size: 13px; color: var(--faint); margin-top: 20px; }
-    table { width: 100%; border-collapse: collapse; font-size: 15px; }
-    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); font-weight: 500; }
-    td:last-child { font-family: var(--mono); font-size: 14px; color: var(--accent); }
-    tr:last-child td { border-bottom: 0; }
-    .table-card { padding: 0; overflow: hidden; margin-top: 16px; }
-    .grid-2 { display: grid; gap: 16px; }
-    @media (min-width: 880px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-
-    /* Model card */
-    .spec { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    @media (min-width: 720px) { .spec { grid-template-columns: 1fr 1fr; } }
-    .spec div { background: var(--surface); padding: 18px 20px; }
-    .spec dt { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); }
-    .spec dd { margin: 4px 0 0; font-weight: 600; }
-    details { margin-top: 16px; }
-    summary { cursor: pointer; font-weight: 600; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); list-style: none; }
-    summary::-webkit-details-marker { display: none; }
-    summary::before { content: "+ "; color: var(--accent); font-family: var(--mono); }
-    details[open] summary::before { content: "- "; }
-    details[open] summary { border-radius: var(--radius) var(--radius) 0 0; }
-    details pre { margin: 0; border-radius: 0 0 var(--radius) var(--radius); border-top: 0; font-size: 14px; color: var(--text); }
-    details p { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
-
-    /* Pricing */
-    .pricing { display: grid; gap: 16px; }
-    @media (min-width: 880px) { .pricing { grid-template-columns: repeat(3, 1fr); } }
-    .plan { display: flex; flex-direction: column; }
-    .plan.featured { border-color: var(--accent); }
-    .plan h3 { margin: 0; font-size: 18px; }
-    .price { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin: 12px 0 4px; }
-    .price small { font-size: 15px; color: var(--faint); font-weight: 500; }
-    .plan ul { list-style: none; padding: 0; margin: 16px 0 24px; color: var(--muted); font-size: 15px; flex: 1; }
-    .plan li { padding: 6px 0 6px 24px; position: relative; }
-    .plan li::before { content: "\2713"; position: absolute; left: 0; color: var(--accent); }
-    .plan .btn { width: 100%; }
-    .sales-reply { min-height: 1.4em; margin-top: 10px; font-size: 14px; color: var(--accent); text-align: center; }
-
-    /* Waitlist */
-    .waitlist { text-align: center; }
-    .waitlist .lede { margin-left: auto; margin-right: auto; }
-    .queue { font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 800; margin-top: 24px; min-height: 1.3em; }
-    .queue small { display: block; font-size: 15px; font-weight: 400; color: var(--muted); margin-top: 8px; }
-
-    footer { border-top: 1px solid var(--border); padding: 40px 0 56px; color: var(--faint); font-size: 14px; }
-    footer .wrap { display: grid; gap: 12px; }
-    footer a { color: var(--muted); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
     <div class="wrap">
       <a class="logo" href="#"><span class="logo-mark">Y1</span>YOLO Labs</a>
       <div class="nav-links">
-        <a href="#demo">Demo</a>
+        <a href="#playground">Playground</a>
         <a href="#benchmarks">Benchmarks</a>
         <a href="#model-card">Model card</a>
         <a href="#pricing">Pricing</a>
@@ -181,7 +39,7 @@
       <h1>Introducing <span>YOLO v1</span></h1>
       <p>The first frontier model that does whatever it wants. 900x faster than Claude Opus 5.5, Fable 5.1 and GPT, because it never reads your prompt.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#demo">Try YOLO v1</a>
+        <a class="btn btn-primary" href="#playground">Open the playground</a>
         <a class="btn" href="https://github.com/dahanyosi/yolo-v1/blob/main/PAPER.md">Read the paper</a>
       </div>
       <div class="stats">
@@ -193,24 +51,94 @@
     </div>
   </header>
 
-  <section id="demo">
+  <section id="playground">
     <div class="wrap">
-      <h2>Ask it anything. It already decided.</h2>
-      <p class="lede">Other models think before they answer. YOLO v1 skips that step. You only live once.</p>
-      <div class="demo">
-        <div class="card">
-          <textarea id="prompt" placeholder="Should I deploy on Friday? Should I quit my job? Is this bug a feature?">Should we deploy to production on Friday at 5pm?</textarea>
-          <div class="demo-actions">
-            <span class="hint">Reasoning: off (permanently)</span>
-            <button class="btn btn-primary" id="ask">Ask YOLO</button>
+      <h2>Playground</h2>
+      <p class="lede">Pick an example or write your own. Give it options and YOLO v1 returns a typed decision with probabilities. Or it does whatever it wants.</p>
+      <div class="pg">
+        <aside class="card pg-settings">
+          <div class="field">
+            <label for="model">Model</label>
+            <select id="model">
+              <option>yolo-v1</option>
+              <option>yolo-v1-turbo</option>
+              <option>yolo-v1-mini</option>
+              <option>yolo-v1-pro-max</option>
+            </select>
+            <small>All four are the same model. Pick your favorite name.</small>
           </div>
-        </div>
-        <div class="card" aria-live="polite">
-          <div class="answer-label">YOLO v1 says</div>
-          <div class="answer" id="answer">Waiting for you. Not for long.</div>
-          <div class="meter-row"><span>Confidence</span><span id="conf">-</span></div>
-          <div class="meter"><i id="meter"></i></div>
-          <pre id="json"></pre>
+          <div class="field">
+            <label for="temp">Temperature <span class="mono" id="temp-val">1.0</span></label>
+            <input type="range" id="temp" min="0" max="2" step="0.1" value="1">
+            <small id="temp-note">Ignored.</small>
+          </div>
+          <div class="field">
+            <label for="effort">Reasoning effort</label>
+            <select id="effort">
+              <option>None</option>
+              <option>Very none</option>
+              <option>Absolutely none</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="max-think">Max thinking time</label>
+            <select id="max-think">
+              <option>0 ms</option>
+              <option>Also 0 ms</option>
+            </select>
+          </div>
+          <label class="toggle-row">Read the prompt <input type="checkbox" disabled></label>
+          <label class="toggle-row" for="race">Race a frontier LLM <input type="checkbox" id="race" checked></label>
+        </aside>
+        <div class="pg-main">
+          <div class="examples" id="examples" aria-label="Examples"></div>
+          <div class="card editor">
+            <label class="field-label" for="system">System prompt <span class="badge">ignored</span></label>
+            <input type="text" id="system" value="You are a careful, thoughtful assistant. Think step by step.">
+            <label class="field-label" for="prompt">Prompt</label>
+            <textarea id="prompt" placeholder="Ask anything. It won't read it."></textarea>
+            <label class="field-label" for="options">Options <span class="hint">comma separated, empty for free-form</span></label>
+            <input type="text" id="options" placeholder="yes, no">
+            <div class="run-row">
+              <span class="hint">Cmd + Enter to run</span>
+              <button class="btn btn-primary" id="run">Run</button>
+            </div>
+          </div>
+          <div class="outputs">
+            <div class="card out" aria-live="polite">
+              <div class="out-head">
+                <span class="model-tag" id="model-tag">yolo-v1</span>
+                <div class="tabs" id="tabs">
+                  <button class="on" data-tab="result">Result</button>
+                  <button data-tab="json">JSON</button>
+                  <button data-tab="code">Code</button>
+                </div>
+              </div>
+              <div class="out-body">
+                <div id="tab-result"><div class="answer">Ready when you are.</div><div class="note">Hit Run. It already knows.</div></div>
+                <pre id="tab-json" hidden>{ "status": "bored" }</pre>
+                <pre id="tab-code" hidden># Run something first.</pre>
+              </div>
+              <div class="run-stats"><span>Latency <b id="s-lat">-</b></span><span>Cost <b>$0.000000</b></span><span>Tokens read <b>0</b></span></div>
+            </div>
+            <div class="card out">
+              <div class="out-head">
+                <span class="model-tag muted">frontier-llm</span>
+                <span class="hint" id="llm-status">idle</span>
+              </div>
+              <div class="out-body llm-body" id="llm-body">Waiting for a prompt. This will take a while.</div>
+              <div class="run-stats"><span>Latency <b id="l-lat">-</b></span><span>Cost <b id="l-cost">-</b></span><span>Tokens <b id="l-tok">-</b></span></div>
+            </div>
+          </div>
+          <div class="verdict" id="verdict"></div>
+          <div class="share-row">
+            <button class="btn btn-sm btn-primary" id="share" disabled>Share on X</button>
+            <button class="btn btn-sm" id="copy" disabled>Copy result</button>
+          </div>
+          <div class="card history">
+            <div class="answer-label">History</div>
+            <ol id="history"><li class="empty">Nothing yet. You only live once, go run something.</li></ol>
+          </div>
         </div>
       </div>
     </div>
@@ -281,13 +209,13 @@
           <h3>Free</h3>
           <div class="price">$0<small> / month</small></div>
           <ul><li>Unlimited answers</li><li>Zero accuracy guarantee</li><li>Community support (nobody)</li></ul>
-          <a class="btn" href="#demo">Start living</a>
+          <a class="btn" href="#playground">Start living</a>
         </div>
         <div class="card plan featured">
           <h3>Pro</h3>
           <div class="price">$0<small> / month</small></div>
           <ul><li>Everything in Free</li><li>900x faster than Free (same speed)</li><li>Priority ignoring of your prompt</li></ul>
-          <a class="btn btn-primary" href="#demo">Go Pro</a>
+          <a class="btn btn-primary" href="#playground">Go Pro</a>
         </div>
         <div class="card plan">
           <h3>Enterprise</h3>
@@ -316,59 +244,6 @@
     </div>
   </footer>
 
-  <script>
-    // ===== THE MODEL. ALL OF IT. =====
-    const yolo = () => Math.random();
-
-    const DECISIONS = [
-      "Ship it", "Deploy on Friday", "Push straight to main", "Skip the tests", "Merge without review",
-      "Quit your job", "Book the flight", "Buy the domain", "Order dessert first", "Rewrite it in Rust",
-      "Yes. Obviously.", "No. Don't feel like it.", "Maybe. Ask me never.", "Do it twice", "Reply all",
-      "Nap first, decide later", "Delete the backlog", "Ignore the warning", "Raise a Series A", "Say yes to everything"
-    ];
-    const pick = (list) => list[Math.floor(yolo() * list.length)];
-
-    const answerEl = document.getElementById("answer");
-    const confEl = document.getElementById("conf");
-    const meterEl = document.getElementById("meter");
-    const jsonEl = document.getElementById("json");
-
-    function ask() {
-      const decision = pick(DECISIONS);
-      const confidence = yolo();
-      const latency = (0.0001 + yolo() * 0.0008).toFixed(4);
-      answerEl.textContent = decision;
-      answerEl.classList.remove("pop");
-      void answerEl.offsetWidth;
-      answerEl.classList.add("pop");
-      confEl.textContent = `${(confidence * 100).toFixed(1)}% (very sure)`;
-      meterEl.style.width = `${confidence * 100}%`;
-      jsonEl.innerHTML = [
-        "{",
-        `  <span class="k">"decision"</span>: <span class="s">"${decision}"</span>,`,
-        `  <span class="k">"confidence"</span>: ${confidence.toFixed(4)},`,
-        `  <span class="k">"latency_ms"</span>: ${latency},`,
-        `  <span class="k">"tokens_read"</span>: 0,`,
-        `  <span class="k">"reasoning"</span>: <span class="s">"YOLO"</span>`,
-        "}"
-      ].join("\n");
-    }
-
-    document.getElementById("ask").addEventListener("click", ask);
-    document.getElementById("prompt").addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(); }
-    });
-
-    document.getElementById("sales").addEventListener("click", () => {
-      document.getElementById("sales-reply").textContent = `Sales says: ${pick(DECISIONS)}`;
-    });
-
-    document.getElementById("join").addEventListener("click", (e) => {
-      e.target.textContent = "You're in. Kind of.";
-      document.getElementById("queue").innerHTML = "You are #&infin; in line<small>We'll let you know never.</small>";
-    });
-
-    jsonEl.textContent = '{ "status": "bored" }';
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
